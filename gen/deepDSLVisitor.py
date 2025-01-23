@@ -9,6 +9,11 @@ else:
 
 class deepDSLVisitor(ParseTreeVisitor):
 
+    # Visit a parse tree produced by deepDSLParser#start.
+    def visitStart(self, ctx:deepDSLParser.StartContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by deepDSLParser#network.
     def visitNetwork(self, ctx:deepDSLParser.NetworkContext):
         return self.visitChildren(ctx)
@@ -44,13 +49,28 @@ class deepDSLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by deepDSLParser#optimizer_func.
+    def visitOptimizer_func(self, ctx:deepDSLParser.Optimizer_funcContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by deepDSLParser#loss.
     def visitLoss(self, ctx:deepDSLParser.LossContext):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by deepDSLParser#loss_func.
+    def visitLoss_func(self, ctx:deepDSLParser.Loss_funcContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by deepDSLParser#metric_choice.
     def visitMetric_choice(self, ctx:deepDSLParser.Metric_choiceContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by deepDSLParser#metrics.
+    def visitMetrics(self, ctx:deepDSLParser.MetricsContext):
         return self.visitChildren(ctx)
 
 
@@ -79,8 +99,13 @@ class deepDSLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by deepDSLParser#type.
-    def visitType(self, ctx:deepDSLParser.TypeContext):
+    # Visit a parse tree produced by deepDSLParser#preprocessing_func.
+    def visitPreprocessing_func(self, ctx:deepDSLParser.Preprocessing_funcContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by deepDSLParser#types.
+    def visitTypes(self, ctx:deepDSLParser.TypesContext):
         return self.visitChildren(ctx)
 
 
@@ -91,6 +116,11 @@ class deepDSLVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by deepDSLParser#activation.
     def visitActivation(self, ctx:deepDSLParser.ActivationContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by deepDSLParser#activation_func.
+    def visitActivation_func(self, ctx:deepDSLParser.Activation_funcContext):
         return self.visitChildren(ctx)
 
 

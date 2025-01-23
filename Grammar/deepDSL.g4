@@ -1,6 +1,9 @@
 grammar deepDSL;
 
 // Parser Rules
+
+start: network EOF;
+
 network: 'network' ID '{'
             layer+
             training

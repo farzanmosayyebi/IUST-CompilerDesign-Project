@@ -8,6 +8,15 @@ else:
 # This class defines a complete listener for a parse tree produced by deepDSLParser.
 class deepDSLListener(ParseTreeListener):
 
+    # Enter a parse tree produced by deepDSLParser#start.
+    def enterStart(self, ctx:deepDSLParser.StartContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#start.
+    def exitStart(self, ctx:deepDSLParser.StartContext):
+        pass
+
+
     # Enter a parse tree produced by deepDSLParser#network.
     def enterNetwork(self, ctx:deepDSLParser.NetworkContext):
         pass
@@ -71,6 +80,15 @@ class deepDSLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by deepDSLParser#optimizer_func.
+    def enterOptimizer_func(self, ctx:deepDSLParser.Optimizer_funcContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#optimizer_func.
+    def exitOptimizer_func(self, ctx:deepDSLParser.Optimizer_funcContext):
+        pass
+
+
     # Enter a parse tree produced by deepDSLParser#loss.
     def enterLoss(self, ctx:deepDSLParser.LossContext):
         pass
@@ -80,12 +98,30 @@ class deepDSLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by deepDSLParser#loss_func.
+    def enterLoss_func(self, ctx:deepDSLParser.Loss_funcContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#loss_func.
+    def exitLoss_func(self, ctx:deepDSLParser.Loss_funcContext):
+        pass
+
+
     # Enter a parse tree produced by deepDSLParser#metric_choice.
     def enterMetric_choice(self, ctx:deepDSLParser.Metric_choiceContext):
         pass
 
     # Exit a parse tree produced by deepDSLParser#metric_choice.
     def exitMetric_choice(self, ctx:deepDSLParser.Metric_choiceContext):
+        pass
+
+
+    # Enter a parse tree produced by deepDSLParser#metrics.
+    def enterMetrics(self, ctx:deepDSLParser.MetricsContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#metrics.
+    def exitMetrics(self, ctx:deepDSLParser.MetricsContext):
         pass
 
 
@@ -134,12 +170,21 @@ class deepDSLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by deepDSLParser#type.
-    def enterType(self, ctx:deepDSLParser.TypeContext):
+    # Enter a parse tree produced by deepDSLParser#preprocessing_func.
+    def enterPreprocessing_func(self, ctx:deepDSLParser.Preprocessing_funcContext):
         pass
 
-    # Exit a parse tree produced by deepDSLParser#type.
-    def exitType(self, ctx:deepDSLParser.TypeContext):
+    # Exit a parse tree produced by deepDSLParser#preprocessing_func.
+    def exitPreprocessing_func(self, ctx:deepDSLParser.Preprocessing_funcContext):
+        pass
+
+
+    # Enter a parse tree produced by deepDSLParser#types.
+    def enterTypes(self, ctx:deepDSLParser.TypesContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#types.
+    def exitTypes(self, ctx:deepDSLParser.TypesContext):
         pass
 
 
@@ -158,6 +203,15 @@ class deepDSLListener(ParseTreeListener):
 
     # Exit a parse tree produced by deepDSLParser#activation.
     def exitActivation(self, ctx:deepDSLParser.ActivationContext):
+        pass
+
+
+    # Enter a parse tree produced by deepDSLParser#activation_func.
+    def enterActivation_func(self, ctx:deepDSLParser.Activation_funcContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#activation_func.
+    def exitActivation_func(self, ctx:deepDSLParser.Activation_funcContext):
         pass
 
 

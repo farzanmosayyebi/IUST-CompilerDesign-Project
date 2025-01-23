@@ -12,12 +12,12 @@ matplotlib.use('Agg')
 
 
 
-def main(arguments):
-	stream = FileStream(arguments.input, encoding='utf8')
+def main(args):
+	stream = FileStream(args.file, encoding='utf8')
 	lexer = deepDSLLexer(stream)
 	token_stream = CommonTokenStream(lexer)
 	parser = deepDSLParser(token_stream)
-	parse_tree = parser.program()
+	parse_tree = parser.network()
 	ast_builder_listener = DeepDSLCustomListener(parser.ruleNames)
 	walker = ParseTreeWalker()
 	walker.walk(t=parse_tree, listener=ast_builder_listener)
@@ -26,15 +26,15 @@ def main(arguments):
 	post_order_ast_traverser = PostOrderASTTraverser()
 	post_order_ast_traverser.node_attributes = ['label', 'text', 'number']
 	traversal = post_order_ast_traverser.traverse_ast(ast.root)
-	code_generator = DeepDSLCodeGenerator()
-	generated_code = code_generator.generate_code(traversal)
-	with open(arguments.output, 'w') as output_file:
-		output_file.write(generated_code)
+	# code_generator = DeepDSLCodeGenerator()
+	# generated_code = code_generator.generate_code(traversal)
+	# with open(arguments.output, 'w') as output_file:
+	# 	output_file.write(generated_code)
 
 
 if __name__ == '__main__':
 	argparser = argparse.ArgumentParser()
-	argparser.add_argument('-i', '--input', help='Input source', default=r'test.neuralNetwork')
+	argparser.add_argument('-n', '--file', help='Input source', default=r'input.txt')
 	argparser.add_argument('-o', '--output', help='Output path', default=r'test_output.py')
 	args = argparser.parse_args()
 	main(args)
