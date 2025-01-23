@@ -224,5 +224,23 @@ class deepDSLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by deepDSLParser#size.
+    def enterSize(self, ctx:deepDSLParser.SizeContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#size.
+    def exitSize(self, ctx:deepDSLParser.SizeContext):
+        pass
+
+
+    # Enter a parse tree produced by deepDSLParser#path.
+    def enterPath(self, ctx:deepDSLParser.PathContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#path.
+    def exitPath(self, ctx:deepDSLParser.PathContext):
+        pass
+
+
 
 del deepDSLParser

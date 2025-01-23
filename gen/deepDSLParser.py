@@ -10,70 +10,73 @@ else:
 
 def serializedATN():
     return [
-        4,1,46,208,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,46,216,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
-        7,20,2,21,7,21,2,22,7,22,2,23,7,23,1,0,1,0,1,0,1,1,1,1,1,1,1,1,4,
-        1,56,8,1,11,1,12,1,57,1,1,1,1,3,1,62,8,1,1,1,3,1,65,8,1,1,1,3,1,
-        68,8,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,3,2,78,8,2,1,2,3,2,81,8,2,
-        1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,4,1,4,1,4,1,4,
-        1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,6,
-        1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,9,1,9,1,9,1,9,1,9,
-        1,10,1,10,1,11,1,11,1,11,1,11,1,11,1,11,5,11,139,8,11,10,11,12,11,
-        142,9,11,1,11,1,11,1,11,1,12,1,12,1,13,1,13,1,13,1,13,1,13,1,14,
-        1,14,1,14,1,14,1,14,1,15,1,15,1,15,1,15,1,15,1,16,1,16,1,16,1,16,
-        1,16,1,17,1,17,1,17,1,17,1,17,1,18,1,18,1,18,1,19,1,19,1,19,1,19,
-        1,19,1,20,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,21,1,21,1,22,1,22,
-        1,23,1,23,1,23,1,23,1,23,1,23,5,23,200,8,23,10,23,12,23,203,9,23,
-        1,23,1,23,1,23,1,23,0,0,24,0,2,4,6,8,10,12,14,16,18,20,22,24,26,
-        28,30,32,34,36,38,40,42,44,46,0,5,1,0,16,18,1,0,20,21,2,0,19,19,
-        23,23,1,0,31,32,1,0,35,39,191,0,48,1,0,0,0,2,51,1,0,0,0,4,71,1,0,
-        0,0,6,84,1,0,0,0,8,94,1,0,0,0,10,101,1,0,0,0,12,113,1,0,0,0,14,118,
-        1,0,0,0,16,123,1,0,0,0,18,125,1,0,0,0,20,130,1,0,0,0,22,132,1,0,
-        0,0,24,146,1,0,0,0,26,148,1,0,0,0,28,153,1,0,0,0,30,158,1,0,0,0,
-        32,163,1,0,0,0,34,168,1,0,0,0,36,173,1,0,0,0,38,176,1,0,0,0,40,181,
-        1,0,0,0,42,186,1,0,0,0,44,191,1,0,0,0,46,193,1,0,0,0,48,49,3,2,1,
-        0,49,50,5,0,0,1,50,1,1,0,0,0,51,52,5,1,0,0,52,53,5,41,0,0,53,55,
-        5,2,0,0,54,56,3,4,2,0,55,54,1,0,0,0,56,57,1,0,0,0,57,55,1,0,0,0,
-        57,58,1,0,0,0,58,59,1,0,0,0,59,61,3,6,3,0,60,62,3,8,4,0,61,60,1,
-        0,0,0,61,62,1,0,0,0,62,64,1,0,0,0,63,65,3,10,5,0,64,63,1,0,0,0,64,
-        65,1,0,0,0,65,67,1,0,0,0,66,68,3,12,6,0,67,66,1,0,0,0,67,68,1,0,
-        0,0,68,69,1,0,0,0,69,70,5,3,0,0,70,3,1,0,0,0,71,72,5,4,0,0,72,73,
-        5,41,0,0,73,74,5,2,0,0,74,75,3,38,19,0,75,77,3,40,20,0,76,78,3,42,
-        21,0,77,76,1,0,0,0,77,78,1,0,0,0,78,80,1,0,0,0,79,81,3,46,23,0,80,
-        79,1,0,0,0,80,81,1,0,0,0,81,82,1,0,0,0,82,83,5,3,0,0,83,5,1,0,0,
-        0,84,85,5,5,0,0,85,86,5,2,0,0,86,87,3,14,7,0,87,88,3,18,9,0,88,89,
-        3,22,11,0,89,90,3,26,13,0,90,91,3,28,14,0,91,92,3,30,15,0,92,93,
-        5,3,0,0,93,7,1,0,0,0,94,95,5,6,0,0,95,96,5,41,0,0,96,97,5,2,0,0,
-        97,98,3,32,16,0,98,99,3,34,17,0,99,100,5,3,0,0,100,9,1,0,0,0,101,
-        102,5,7,0,0,102,103,5,2,0,0,103,104,5,8,0,0,104,105,5,9,0,0,105,
-        106,5,10,0,0,106,107,5,42,0,0,107,108,5,11,0,0,108,109,5,42,0,0,
-        109,110,5,12,0,0,110,111,5,13,0,0,111,112,5,3,0,0,112,11,1,0,0,0,
-        113,114,5,14,0,0,114,115,5,2,0,0,115,116,3,22,11,0,116,117,5,3,0,
-        0,117,13,1,0,0,0,118,119,5,15,0,0,119,120,5,9,0,0,120,121,3,16,8,
-        0,121,122,5,13,0,0,122,15,1,0,0,0,123,124,7,0,0,0,124,17,1,0,0,0,
-        125,126,5,19,0,0,126,127,5,9,0,0,127,128,3,20,10,0,128,129,5,13,
-        0,0,129,19,1,0,0,0,130,131,7,1,0,0,131,21,1,0,0,0,132,133,5,22,0,
-        0,133,134,5,9,0,0,134,135,5,10,0,0,135,140,3,24,12,0,136,137,5,11,
-        0,0,137,139,3,24,12,0,138,136,1,0,0,0,139,142,1,0,0,0,140,138,1,
-        0,0,0,140,141,1,0,0,0,141,143,1,0,0,0,142,140,1,0,0,0,143,144,5,
-        12,0,0,144,145,5,13,0,0,145,23,1,0,0,0,146,147,7,2,0,0,147,25,1,
-        0,0,0,148,149,5,24,0,0,149,150,5,9,0,0,150,151,5,42,0,0,151,152,
-        5,13,0,0,152,27,1,0,0,0,153,154,5,25,0,0,154,155,5,9,0,0,155,156,
-        5,42,0,0,156,157,5,13,0,0,157,29,1,0,0,0,158,159,5,26,0,0,159,160,
-        5,9,0,0,160,161,5,43,0,0,161,162,5,13,0,0,162,31,1,0,0,0,163,164,
-        5,27,0,0,164,165,5,9,0,0,165,166,5,44,0,0,166,167,5,13,0,0,167,33,
-        1,0,0,0,168,169,5,28,0,0,169,170,5,9,0,0,170,171,3,36,18,0,171,172,
-        5,13,0,0,172,35,1,0,0,0,173,174,5,29,0,0,174,175,5,42,0,0,175,37,
-        1,0,0,0,176,177,5,30,0,0,177,178,5,9,0,0,178,179,7,3,0,0,179,180,
-        5,13,0,0,180,39,1,0,0,0,181,182,5,33,0,0,182,183,5,9,0,0,183,184,
-        5,42,0,0,184,185,5,13,0,0,185,41,1,0,0,0,186,187,5,34,0,0,187,188,
-        5,9,0,0,188,189,3,44,22,0,189,190,5,13,0,0,190,43,1,0,0,0,191,192,
-        7,4,0,0,192,45,1,0,0,0,193,194,5,40,0,0,194,195,5,9,0,0,195,196,
-        5,10,0,0,196,201,5,42,0,0,197,198,5,11,0,0,198,200,5,42,0,0,199,
-        197,1,0,0,0,200,203,1,0,0,0,201,199,1,0,0,0,201,202,1,0,0,0,202,
-        204,1,0,0,0,203,201,1,0,0,0,204,205,5,12,0,0,205,206,5,13,0,0,206,
-        47,1,0,0,0,8,57,61,64,67,77,80,140,201
+        7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,1,0,1,0,1,
+        0,1,1,1,1,1,1,1,1,4,1,60,8,1,11,1,12,1,61,1,1,1,1,3,1,66,8,1,1,1,
+        3,1,69,8,1,1,1,3,1,72,8,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,3,2,82,
+        8,2,1,2,3,2,85,8,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,
+        3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,
+        5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,
+        9,1,9,1,9,1,9,1,9,1,10,1,10,1,11,1,11,1,11,1,11,1,11,1,11,5,11,143,
+        8,11,10,11,12,11,146,9,11,1,11,1,11,1,11,1,12,1,12,1,13,1,13,1,13,
+        1,13,1,13,1,14,1,14,1,14,1,14,1,14,1,15,1,15,1,15,1,15,1,15,1,16,
+        1,16,1,16,1,16,1,16,1,17,1,17,1,17,1,17,1,17,1,18,1,18,1,18,1,19,
+        1,19,1,19,1,19,1,19,1,20,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,21,
+        1,21,1,22,1,22,1,23,1,23,1,23,1,23,1,23,1,23,5,23,204,8,23,10,23,
+        12,23,207,9,23,1,23,1,23,1,23,1,24,1,24,1,25,1,25,1,25,0,0,26,0,
+        2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,
+        48,50,0,6,1,0,16,18,1,0,20,21,2,0,19,19,23,23,1,0,31,32,1,0,35,39,
+        1,0,42,43,197,0,52,1,0,0,0,2,55,1,0,0,0,4,75,1,0,0,0,6,88,1,0,0,
+        0,8,98,1,0,0,0,10,105,1,0,0,0,12,117,1,0,0,0,14,122,1,0,0,0,16,127,
+        1,0,0,0,18,129,1,0,0,0,20,134,1,0,0,0,22,136,1,0,0,0,24,150,1,0,
+        0,0,26,152,1,0,0,0,28,157,1,0,0,0,30,162,1,0,0,0,32,167,1,0,0,0,
+        34,172,1,0,0,0,36,177,1,0,0,0,38,180,1,0,0,0,40,185,1,0,0,0,42,190,
+        1,0,0,0,44,195,1,0,0,0,46,197,1,0,0,0,48,211,1,0,0,0,50,213,1,0,
+        0,0,52,53,3,2,1,0,53,54,5,0,0,1,54,1,1,0,0,0,55,56,5,1,0,0,56,57,
+        5,41,0,0,57,59,5,2,0,0,58,60,3,4,2,0,59,58,1,0,0,0,60,61,1,0,0,0,
+        61,59,1,0,0,0,61,62,1,0,0,0,62,63,1,0,0,0,63,65,3,6,3,0,64,66,3,
+        8,4,0,65,64,1,0,0,0,65,66,1,0,0,0,66,68,1,0,0,0,67,69,3,10,5,0,68,
+        67,1,0,0,0,68,69,1,0,0,0,69,71,1,0,0,0,70,72,3,12,6,0,71,70,1,0,
+        0,0,71,72,1,0,0,0,72,73,1,0,0,0,73,74,5,3,0,0,74,3,1,0,0,0,75,76,
+        5,4,0,0,76,77,5,41,0,0,77,78,5,2,0,0,78,79,3,38,19,0,79,81,3,40,
+        20,0,80,82,3,42,21,0,81,80,1,0,0,0,81,82,1,0,0,0,82,84,1,0,0,0,83,
+        85,3,46,23,0,84,83,1,0,0,0,84,85,1,0,0,0,85,86,1,0,0,0,86,87,5,3,
+        0,0,87,5,1,0,0,0,88,89,5,5,0,0,89,90,5,2,0,0,90,91,3,14,7,0,91,92,
+        3,18,9,0,92,93,3,22,11,0,93,94,3,26,13,0,94,95,3,28,14,0,95,96,3,
+        30,15,0,96,97,5,3,0,0,97,7,1,0,0,0,98,99,5,6,0,0,99,100,5,41,0,0,
+        100,101,5,2,0,0,101,102,3,32,16,0,102,103,3,34,17,0,103,104,5,3,
+        0,0,104,9,1,0,0,0,105,106,5,7,0,0,106,107,5,2,0,0,107,108,5,8,0,
+        0,108,109,5,9,0,0,109,110,5,10,0,0,110,111,3,48,24,0,111,112,5,11,
+        0,0,112,113,3,48,24,0,113,114,5,12,0,0,114,115,5,13,0,0,115,116,
+        5,3,0,0,116,11,1,0,0,0,117,118,5,14,0,0,118,119,5,2,0,0,119,120,
+        3,22,11,0,120,121,5,3,0,0,121,13,1,0,0,0,122,123,5,15,0,0,123,124,
+        5,9,0,0,124,125,3,16,8,0,125,126,5,13,0,0,126,15,1,0,0,0,127,128,
+        7,0,0,0,128,17,1,0,0,0,129,130,5,19,0,0,130,131,5,9,0,0,131,132,
+        3,20,10,0,132,133,5,13,0,0,133,19,1,0,0,0,134,135,7,1,0,0,135,21,
+        1,0,0,0,136,137,5,22,0,0,137,138,5,9,0,0,138,139,5,10,0,0,139,144,
+        3,24,12,0,140,141,5,11,0,0,141,143,3,24,12,0,142,140,1,0,0,0,143,
+        146,1,0,0,0,144,142,1,0,0,0,144,145,1,0,0,0,145,147,1,0,0,0,146,
+        144,1,0,0,0,147,148,5,12,0,0,148,149,5,13,0,0,149,23,1,0,0,0,150,
+        151,7,2,0,0,151,25,1,0,0,0,152,153,5,24,0,0,153,154,5,9,0,0,154,
+        155,3,48,24,0,155,156,5,13,0,0,156,27,1,0,0,0,157,158,5,25,0,0,158,
+        159,5,9,0,0,159,160,3,48,24,0,160,161,5,13,0,0,161,29,1,0,0,0,162,
+        163,5,26,0,0,163,164,5,9,0,0,164,165,3,48,24,0,165,166,5,13,0,0,
+        166,31,1,0,0,0,167,168,5,27,0,0,168,169,5,9,0,0,169,170,3,50,25,
+        0,170,171,5,13,0,0,171,33,1,0,0,0,172,173,5,28,0,0,173,174,5,9,0,
+        0,174,175,3,36,18,0,175,176,5,13,0,0,176,35,1,0,0,0,177,178,5,29,
+        0,0,178,179,3,48,24,0,179,37,1,0,0,0,180,181,5,30,0,0,181,182,5,
+        9,0,0,182,183,7,3,0,0,183,184,5,13,0,0,184,39,1,0,0,0,185,186,5,
+        33,0,0,186,187,5,9,0,0,187,188,3,48,24,0,188,189,5,13,0,0,189,41,
+        1,0,0,0,190,191,5,34,0,0,191,192,5,9,0,0,192,193,3,44,22,0,193,194,
+        5,13,0,0,194,43,1,0,0,0,195,196,7,4,0,0,196,45,1,0,0,0,197,198,5,
+        40,0,0,198,199,5,9,0,0,199,200,5,10,0,0,200,205,3,48,24,0,201,202,
+        5,11,0,0,202,204,3,48,24,0,203,201,1,0,0,0,204,207,1,0,0,0,205,203,
+        1,0,0,0,205,206,1,0,0,0,206,208,1,0,0,0,207,205,1,0,0,0,208,209,
+        5,12,0,0,209,210,5,13,0,0,210,47,1,0,0,0,211,212,7,5,0,0,212,49,
+        1,0,0,0,213,214,5,44,0,0,214,51,1,0,0,0,8,61,65,68,71,81,84,144,
+        205
     ]
 
 class deepDSLParser ( Parser ):
@@ -133,12 +136,15 @@ class deepDSLParser ( Parser ):
     RULE_activation = 21
     RULE_activation_func = 22
     RULE_input_shape = 23
+    RULE_size = 24
+    RULE_path = 25
 
     ruleNames =  [ "start", "network", "layer", "training", "dataset", "visualize", 
                    "evaluate", "optimizer", "optimizer_func", "loss", "loss_func", 
                    "metric_choice", "metrics", "epochs", "batch_size", "validation_split", 
                    "source", "preprocessing", "preprocessing_func", "types", 
-                   "units", "activation", "activation_func", "input_shape" ]
+                   "units", "activation", "activation_func", "input_shape", 
+                   "size", "path" ]
 
     EOF = Token.EOF
     T__0=1
@@ -237,9 +243,9 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_start)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 48
+            self.state = 52
             self.network()
-            self.state = 49
+            self.state = 53
             self.match(deepDSLParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -310,51 +316,51 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 51
+            self.state = 55
             self.match(deepDSLParser.T__0)
-            self.state = 52
+            self.state = 56
             self.match(deepDSLParser.ID)
-            self.state = 53
+            self.state = 57
             self.match(deepDSLParser.T__1)
-            self.state = 55 
+            self.state = 59 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 54
+                self.state = 58
                 self.layer()
-                self.state = 57 
+                self.state = 61 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==4):
                     break
 
-            self.state = 59
+            self.state = 63
             self.training()
-            self.state = 61
+            self.state = 65
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==6:
-                self.state = 60
+                self.state = 64
                 self.dataset()
 
 
-            self.state = 64
+            self.state = 68
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==7:
-                self.state = 63
+                self.state = 67
                 self.visualize()
 
 
-            self.state = 67
+            self.state = 71
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==14:
-                self.state = 66
+                self.state = 70
                 self.evaluate()
 
 
-            self.state = 69
+            self.state = 73
             self.match(deepDSLParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -418,33 +424,33 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 71
-            self.match(deepDSLParser.T__3)
-            self.state = 72
-            self.match(deepDSLParser.ID)
-            self.state = 73
-            self.match(deepDSLParser.T__1)
-            self.state = 74
-            self.types()
             self.state = 75
-            self.units()
+            self.match(deepDSLParser.T__3)
+            self.state = 76
+            self.match(deepDSLParser.ID)
             self.state = 77
+            self.match(deepDSLParser.T__1)
+            self.state = 78
+            self.types()
+            self.state = 79
+            self.units()
+            self.state = 81
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==34:
-                self.state = 76
+                self.state = 80
                 self.activation()
 
 
-            self.state = 80
+            self.state = 84
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==40:
-                self.state = 79
+                self.state = 83
                 self.input_shape()
 
 
-            self.state = 82
+            self.state = 86
             self.match(deepDSLParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -512,23 +518,23 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_training)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 84
-            self.match(deepDSLParser.T__4)
-            self.state = 85
-            self.match(deepDSLParser.T__1)
-            self.state = 86
-            self.optimizer()
-            self.state = 87
-            self.loss()
             self.state = 88
-            self.metric_choice()
+            self.match(deepDSLParser.T__4)
             self.state = 89
-            self.epochs()
+            self.match(deepDSLParser.T__1)
             self.state = 90
-            self.batch_size()
+            self.optimizer()
             self.state = 91
-            self.validation_split()
+            self.loss()
             self.state = 92
+            self.metric_choice()
+            self.state = 93
+            self.epochs()
+            self.state = 94
+            self.batch_size()
+            self.state = 95
+            self.validation_split()
+            self.state = 96
             self.match(deepDSLParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -583,17 +589,17 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_dataset)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 94
-            self.match(deepDSLParser.T__5)
-            self.state = 95
-            self.match(deepDSLParser.ID)
-            self.state = 96
-            self.match(deepDSLParser.T__1)
-            self.state = 97
-            self.source()
             self.state = 98
-            self.preprocessing()
+            self.match(deepDSLParser.T__5)
             self.state = 99
+            self.match(deepDSLParser.ID)
+            self.state = 100
+            self.match(deepDSLParser.T__1)
+            self.state = 101
+            self.source()
+            self.state = 102
+            self.preprocessing()
+            self.state = 103
             self.match(deepDSLParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -611,11 +617,12 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def INT(self, i:int=None):
+        def size(self, i:int=None):
             if i is None:
-                return self.getTokens(deepDSLParser.INT)
+                return self.getTypedRuleContexts(deepDSLParser.SizeContext)
             else:
-                return self.getToken(deepDSLParser.INT, i)
+                return self.getTypedRuleContext(deepDSLParser.SizeContext,i)
+
 
         def getRuleIndex(self):
             return deepDSLParser.RULE_visualize
@@ -643,27 +650,27 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_visualize)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 101
-            self.match(deepDSLParser.T__6)
-            self.state = 102
-            self.match(deepDSLParser.T__1)
-            self.state = 103
-            self.match(deepDSLParser.T__7)
-            self.state = 104
-            self.match(deepDSLParser.T__8)
             self.state = 105
-            self.match(deepDSLParser.T__9)
+            self.match(deepDSLParser.T__6)
             self.state = 106
-            self.match(deepDSLParser.INT)
+            self.match(deepDSLParser.T__1)
             self.state = 107
-            self.match(deepDSLParser.T__10)
+            self.match(deepDSLParser.T__7)
             self.state = 108
-            self.match(deepDSLParser.INT)
+            self.match(deepDSLParser.T__8)
             self.state = 109
-            self.match(deepDSLParser.T__11)
+            self.match(deepDSLParser.T__9)
             self.state = 110
-            self.match(deepDSLParser.T__12)
+            self.size()
             self.state = 111
+            self.match(deepDSLParser.T__10)
+            self.state = 112
+            self.size()
+            self.state = 113
+            self.match(deepDSLParser.T__11)
+            self.state = 114
+            self.match(deepDSLParser.T__12)
+            self.state = 115
             self.match(deepDSLParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -711,13 +718,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_evaluate)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 113
+            self.state = 117
             self.match(deepDSLParser.T__13)
-            self.state = 114
+            self.state = 118
             self.match(deepDSLParser.T__1)
-            self.state = 115
+            self.state = 119
             self.metric_choice()
-            self.state = 116
+            self.state = 120
             self.match(deepDSLParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -765,13 +772,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_optimizer)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 118
+            self.state = 122
             self.match(deepDSLParser.T__14)
-            self.state = 119
+            self.state = 123
             self.match(deepDSLParser.T__8)
-            self.state = 120
+            self.state = 124
             self.optimizer_func()
-            self.state = 121
+            self.state = 125
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -817,7 +824,7 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 123
+            self.state = 127
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 458752) != 0)):
                 self._errHandler.recoverInline(self)
@@ -870,13 +877,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_loss)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 125
+            self.state = 129
             self.match(deepDSLParser.T__18)
-            self.state = 126
+            self.state = 130
             self.match(deepDSLParser.T__8)
-            self.state = 127
+            self.state = 131
             self.loss_func()
-            self.state = 128
+            self.state = 132
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -922,7 +929,7 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 130
+            self.state = 134
             _la = self._input.LA(1)
             if not(_la==20 or _la==21):
                 self._errHandler.recoverInline(self)
@@ -979,29 +986,29 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 132
+            self.state = 136
             self.match(deepDSLParser.T__21)
-            self.state = 133
+            self.state = 137
             self.match(deepDSLParser.T__8)
-            self.state = 134
+            self.state = 138
             self.match(deepDSLParser.T__9)
-            self.state = 135
+            self.state = 139
             self.metrics()
-            self.state = 140
+            self.state = 144
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==11:
-                self.state = 136
+                self.state = 140
                 self.match(deepDSLParser.T__10)
-                self.state = 137
+                self.state = 141
                 self.metrics()
-                self.state = 142
+                self.state = 146
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 143
+            self.state = 147
             self.match(deepDSLParser.T__11)
-            self.state = 144
+            self.state = 148
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1047,7 +1054,7 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 146
+            self.state = 150
             _la = self._input.LA(1)
             if not(_la==19 or _la==23):
                 self._errHandler.recoverInline(self)
@@ -1070,8 +1077,9 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def INT(self):
-            return self.getToken(deepDSLParser.INT, 0)
+        def size(self):
+            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+
 
         def getRuleIndex(self):
             return deepDSLParser.RULE_epochs
@@ -1099,13 +1107,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_epochs)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 148
+            self.state = 152
             self.match(deepDSLParser.T__23)
-            self.state = 149
+            self.state = 153
             self.match(deepDSLParser.T__8)
-            self.state = 150
-            self.match(deepDSLParser.INT)
-            self.state = 151
+            self.state = 154
+            self.size()
+            self.state = 155
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1123,8 +1131,9 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def INT(self):
-            return self.getToken(deepDSLParser.INT, 0)
+        def size(self):
+            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+
 
         def getRuleIndex(self):
             return deepDSLParser.RULE_batch_size
@@ -1152,13 +1161,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 28, self.RULE_batch_size)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 153
+            self.state = 157
             self.match(deepDSLParser.T__24)
-            self.state = 154
+            self.state = 158
             self.match(deepDSLParser.T__8)
-            self.state = 155
-            self.match(deepDSLParser.INT)
-            self.state = 156
+            self.state = 159
+            self.size()
+            self.state = 160
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1176,8 +1185,9 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def FLOAT(self):
-            return self.getToken(deepDSLParser.FLOAT, 0)
+        def size(self):
+            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+
 
         def getRuleIndex(self):
             return deepDSLParser.RULE_validation_split
@@ -1205,13 +1215,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 30, self.RULE_validation_split)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 158
+            self.state = 162
             self.match(deepDSLParser.T__25)
-            self.state = 159
+            self.state = 163
             self.match(deepDSLParser.T__8)
-            self.state = 160
-            self.match(deepDSLParser.FLOAT)
-            self.state = 161
+            self.state = 164
+            self.size()
+            self.state = 165
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1229,8 +1239,9 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def STRING(self):
-            return self.getToken(deepDSLParser.STRING, 0)
+        def path(self):
+            return self.getTypedRuleContext(deepDSLParser.PathContext,0)
+
 
         def getRuleIndex(self):
             return deepDSLParser.RULE_source
@@ -1258,13 +1269,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 32, self.RULE_source)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 163
+            self.state = 167
             self.match(deepDSLParser.T__26)
-            self.state = 164
+            self.state = 168
             self.match(deepDSLParser.T__8)
-            self.state = 165
-            self.match(deepDSLParser.STRING)
-            self.state = 166
+            self.state = 169
+            self.path()
+            self.state = 170
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1312,13 +1323,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 34, self.RULE_preprocessing)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 168
+            self.state = 172
             self.match(deepDSLParser.T__27)
-            self.state = 169
+            self.state = 173
             self.match(deepDSLParser.T__8)
-            self.state = 170
+            self.state = 174
             self.preprocessing_func()
-            self.state = 171
+            self.state = 175
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1336,8 +1347,9 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def INT(self):
-            return self.getToken(deepDSLParser.INT, 0)
+        def size(self):
+            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+
 
         def getRuleIndex(self):
             return deepDSLParser.RULE_preprocessing_func
@@ -1365,10 +1377,10 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 36, self.RULE_preprocessing_func)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 173
+            self.state = 177
             self.match(deepDSLParser.T__28)
-            self.state = 174
-            self.match(deepDSLParser.INT)
+            self.state = 178
+            self.size()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1413,18 +1425,18 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 176
+            self.state = 180
             self.match(deepDSLParser.T__29)
-            self.state = 177
+            self.state = 181
             self.match(deepDSLParser.T__8)
-            self.state = 178
+            self.state = 182
             _la = self._input.LA(1)
             if not(_la==31 or _la==32):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 179
+            self.state = 183
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1442,8 +1454,9 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def INT(self):
-            return self.getToken(deepDSLParser.INT, 0)
+        def size(self):
+            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+
 
         def getRuleIndex(self):
             return deepDSLParser.RULE_units
@@ -1471,13 +1484,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 40, self.RULE_units)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 181
+            self.state = 185
             self.match(deepDSLParser.T__32)
-            self.state = 182
+            self.state = 186
             self.match(deepDSLParser.T__8)
-            self.state = 183
-            self.match(deepDSLParser.INT)
-            self.state = 184
+            self.state = 187
+            self.size()
+            self.state = 188
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1525,13 +1538,13 @@ class deepDSLParser ( Parser ):
         self.enterRule(localctx, 42, self.RULE_activation)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 186
+            self.state = 190
             self.match(deepDSLParser.T__33)
-            self.state = 187
+            self.state = 191
             self.match(deepDSLParser.T__8)
-            self.state = 188
+            self.state = 192
             self.activation_func()
-            self.state = 189
+            self.state = 193
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -1577,7 +1590,7 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 191
+            self.state = 195
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1065151889408) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1600,11 +1613,12 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def INT(self, i:int=None):
+        def size(self, i:int=None):
             if i is None:
-                return self.getTokens(deepDSLParser.INT)
+                return self.getTypedRuleContexts(deepDSLParser.SizeContext)
             else:
-                return self.getToken(deepDSLParser.INT, i)
+                return self.getTypedRuleContext(deepDSLParser.SizeContext,i)
+
 
         def getRuleIndex(self):
             return deepDSLParser.RULE_input_shape
@@ -1633,30 +1647,133 @@ class deepDSLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 193
+            self.state = 197
             self.match(deepDSLParser.T__39)
-            self.state = 194
+            self.state = 198
             self.match(deepDSLParser.T__8)
-            self.state = 195
+            self.state = 199
             self.match(deepDSLParser.T__9)
-            self.state = 196
-            self.match(deepDSLParser.INT)
-            self.state = 201
+            self.state = 200
+            self.size()
+            self.state = 205
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==11:
-                self.state = 197
+                self.state = 201
                 self.match(deepDSLParser.T__10)
-                self.state = 198
-                self.match(deepDSLParser.INT)
-                self.state = 203
+                self.state = 202
+                self.size()
+                self.state = 207
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 204
+            self.state = 208
             self.match(deepDSLParser.T__11)
-            self.state = 205
+            self.state = 209
             self.match(deepDSLParser.T__12)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class SizeContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def INT(self):
+            return self.getToken(deepDSLParser.INT, 0)
+
+        def FLOAT(self):
+            return self.getToken(deepDSLParser.FLOAT, 0)
+
+        def getRuleIndex(self):
+            return deepDSLParser.RULE_size
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterSize" ):
+                listener.enterSize(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitSize" ):
+                listener.exitSize(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSize" ):
+                return visitor.visitSize(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def size(self):
+
+        localctx = deepDSLParser.SizeContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 48, self.RULE_size)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 211
+            _la = self._input.LA(1)
+            if not(_la==42 or _la==43):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class PathContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def STRING(self):
+            return self.getToken(deepDSLParser.STRING, 0)
+
+        def getRuleIndex(self):
+            return deepDSLParser.RULE_path
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPath" ):
+                listener.enterPath(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPath" ):
+                listener.exitPath(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPath" ):
+                return visitor.visitPath(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def path(self):
+
+        localctx = deepDSLParser.PathContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 50, self.RULE_path)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 213
+            self.match(deepDSLParser.STRING)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
