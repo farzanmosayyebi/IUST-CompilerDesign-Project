@@ -19,7 +19,7 @@ class DeepDSLCustomListener(deepDSLListener):
         make_ast_subtree(self.ast, ctx, "layer", keep_node=True)
 
     def exitTypes(self, ctx):
-        make_ast_subtree(self.ast, ctx, "types", keep_node=True)
+        make_ast_subtree(self.ast, ctx, ctx.getChild(2).getText())
 
     def exitUnits(self, ctx):
         make_ast_subtree(self.ast, ctx, "units", keep_node=True)
