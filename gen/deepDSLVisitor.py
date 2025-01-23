@@ -129,8 +129,8 @@ class deepDSLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by deepDSLParser#size.
-    def visitSize(self, ctx:deepDSLParser.SizeContext):
+    # Visit a parse tree produced by deepDSLParser#value.
+    def visitValue(self, ctx:deepDSLParser.ValueContext):
         return self.visitChildren(ctx)
 
 

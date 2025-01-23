@@ -34,7 +34,7 @@ dataset: 'dataset' ID '{'
            '}';
 
 visualize: 'visualize' '{'
-                'grid' ':' '[' size ',' size ']' ';'
+                'grid' ':' '[' value ',' value ']' ';'
            '}';
 
 evaluate: 'evaluate' '{'
@@ -52,30 +52,30 @@ metric_choice: 'metric' ':' '[' metrics (',' metrics)* ']' ';';
 
 metrics: ('accuracy' | 'loss');
 
-epochs: 'epochs' ':' size ';';
+epochs: 'epochs' ':' value ';';
 
-batch_size: 'batch_size' ':' size ';';
+batch_size: 'batch_size' ':' value ';';
 
-validation_split: 'validation_split' ':' size ';';
+validation_split: 'validation_split' ':' value ';';
 
 source: 'source' ':' path ';';
 
 preprocessing: 'preprocessing' ':' preprocessing_func ';';
 
-preprocessing_func: 'normalize' size;
+preprocessing_func: 'normalize' value;
 
 types: 'type' ':' ('Dense' | 'Flatten') ';';
 
-units: 'units' ':' size ';';
+units: 'units' ':' value ';';
 
 activation: 'activation' ':' activation_func ';';
 activation_func: ('Relu' | 'Sigmoid' | 'Softmax' | 'Tanh' | 'Linear');
 
-input_shape: 'input_shape' ':' '[' size (',' size)* ']' ';';
+input_shape: 'input_shape' ':' '[' value (',' value)* ']' ';';
 
-size : INT | FLOAT;
+value: (INT | FLOAT);
 
-path: STRING;
+path : STRING;
 
 // Lexer Rules
 ID: [a-zA-Z_][a-zA-Z_0-9]*;

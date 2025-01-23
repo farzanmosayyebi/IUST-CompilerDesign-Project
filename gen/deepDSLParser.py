@@ -136,7 +136,7 @@ class deepDSLParser ( Parser ):
     RULE_activation = 21
     RULE_activation_func = 22
     RULE_input_shape = 23
-    RULE_size = 24
+    RULE_value = 24
     RULE_path = 25
 
     ruleNames =  [ "start", "network", "layer", "training", "dataset", "visualize", 
@@ -144,7 +144,7 @@ class deepDSLParser ( Parser ):
                    "metric_choice", "metrics", "epochs", "batch_size", "validation_split", 
                    "source", "preprocessing", "preprocessing_func", "types", 
                    "units", "activation", "activation_func", "input_shape", 
-                   "size", "path" ]
+                   "value", "path" ]
 
     EOF = Token.EOF
     T__0=1
@@ -617,11 +617,11 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def size(self, i:int=None):
+        def value(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(deepDSLParser.SizeContext)
+                return self.getTypedRuleContexts(deepDSLParser.ValueContext)
             else:
-                return self.getTypedRuleContext(deepDSLParser.SizeContext,i)
+                return self.getTypedRuleContext(deepDSLParser.ValueContext,i)
 
 
         def getRuleIndex(self):
@@ -661,11 +661,11 @@ class deepDSLParser ( Parser ):
             self.state = 109
             self.match(deepDSLParser.T__9)
             self.state = 110
-            self.size()
+            self.value()
             self.state = 111
             self.match(deepDSLParser.T__10)
             self.state = 112
-            self.size()
+            self.value()
             self.state = 113
             self.match(deepDSLParser.T__11)
             self.state = 114
@@ -1077,8 +1077,8 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def size(self):
-            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+        def value(self):
+            return self.getTypedRuleContext(deepDSLParser.ValueContext,0)
 
 
         def getRuleIndex(self):
@@ -1112,7 +1112,7 @@ class deepDSLParser ( Parser ):
             self.state = 153
             self.match(deepDSLParser.T__8)
             self.state = 154
-            self.size()
+            self.value()
             self.state = 155
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
@@ -1131,8 +1131,8 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def size(self):
-            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+        def value(self):
+            return self.getTypedRuleContext(deepDSLParser.ValueContext,0)
 
 
         def getRuleIndex(self):
@@ -1166,7 +1166,7 @@ class deepDSLParser ( Parser ):
             self.state = 158
             self.match(deepDSLParser.T__8)
             self.state = 159
-            self.size()
+            self.value()
             self.state = 160
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
@@ -1185,8 +1185,8 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def size(self):
-            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+        def value(self):
+            return self.getTypedRuleContext(deepDSLParser.ValueContext,0)
 
 
         def getRuleIndex(self):
@@ -1220,7 +1220,7 @@ class deepDSLParser ( Parser ):
             self.state = 163
             self.match(deepDSLParser.T__8)
             self.state = 164
-            self.size()
+            self.value()
             self.state = 165
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
@@ -1347,8 +1347,8 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def size(self):
-            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+        def value(self):
+            return self.getTypedRuleContext(deepDSLParser.ValueContext,0)
 
 
         def getRuleIndex(self):
@@ -1380,7 +1380,7 @@ class deepDSLParser ( Parser ):
             self.state = 177
             self.match(deepDSLParser.T__28)
             self.state = 178
-            self.size()
+            self.value()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1454,8 +1454,8 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def size(self):
-            return self.getTypedRuleContext(deepDSLParser.SizeContext,0)
+        def value(self):
+            return self.getTypedRuleContext(deepDSLParser.ValueContext,0)
 
 
         def getRuleIndex(self):
@@ -1489,7 +1489,7 @@ class deepDSLParser ( Parser ):
             self.state = 186
             self.match(deepDSLParser.T__8)
             self.state = 187
-            self.size()
+            self.value()
             self.state = 188
             self.match(deepDSLParser.T__12)
         except RecognitionException as re:
@@ -1613,11 +1613,11 @@ class deepDSLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def size(self, i:int=None):
+        def value(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(deepDSLParser.SizeContext)
+                return self.getTypedRuleContexts(deepDSLParser.ValueContext)
             else:
-                return self.getTypedRuleContext(deepDSLParser.SizeContext,i)
+                return self.getTypedRuleContext(deepDSLParser.ValueContext,i)
 
 
         def getRuleIndex(self):
@@ -1654,7 +1654,7 @@ class deepDSLParser ( Parser ):
             self.state = 199
             self.match(deepDSLParser.T__9)
             self.state = 200
-            self.size()
+            self.value()
             self.state = 205
             self._errHandler.sync(self)
             _la = self._input.LA(1)
@@ -1662,7 +1662,7 @@ class deepDSLParser ( Parser ):
                 self.state = 201
                 self.match(deepDSLParser.T__10)
                 self.state = 202
-                self.size()
+                self.value()
                 self.state = 207
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -1680,7 +1680,7 @@ class deepDSLParser ( Parser ):
         return localctx
 
 
-    class SizeContext(ParserRuleContext):
+    class ValueContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1694,29 +1694,29 @@ class deepDSLParser ( Parser ):
             return self.getToken(deepDSLParser.FLOAT, 0)
 
         def getRuleIndex(self):
-            return deepDSLParser.RULE_size
+            return deepDSLParser.RULE_value
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSize" ):
-                listener.enterSize(self)
+            if hasattr( listener, "enterValue" ):
+                listener.enterValue(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSize" ):
-                listener.exitSize(self)
+            if hasattr( listener, "exitValue" ):
+                listener.exitValue(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitSize" ):
-                return visitor.visitSize(self)
+            if hasattr( visitor, "visitValue" ):
+                return visitor.visitValue(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def size(self):
+    def value(self):
 
-        localctx = deepDSLParser.SizeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 48, self.RULE_size)
+        localctx = deepDSLParser.ValueContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 48, self.RULE_value)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)

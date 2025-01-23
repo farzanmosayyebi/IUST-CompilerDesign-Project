@@ -121,7 +121,7 @@ units
 activation
 activation_func
 input_shape
-size
+value
 path
 
 
