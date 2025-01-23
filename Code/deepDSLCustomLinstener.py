@@ -6,7 +6,9 @@ from gen.deepDSLParser import deepDSLParser
 
 class DeepDSLCustomListener(deepDSLListener):
     def __init__(self, rule_names):
-        self.overridden_rules = ['layer', 'types', 'units','training', 'activation','visualize', 'input_shape', 'metric_choice' ,'epoch']
+        self.overridden_rules = ['layer', 'types', 'units','training', 'activation',
+                                 'visualize', 'input_shape', 'metric_choice' ,'epoch',
+                                 'dataset', 'source', 'preprocessing_func']
         self.rule_names = rule_names
         self.ast = AST()
 
@@ -38,6 +40,15 @@ class DeepDSLCustomListener(deepDSLListener):
 
     def exitMetric_choice(self, ctx:deepDSLParser.Input_shapeContext):
         make_ast_subtree(self.ast, ctx, "metric_choice", keep_node=True)
+
+    def exitDataset(self, ctx:deepDSLParser.Input_shapeContext):
+        make_ast_subtree(self.ast, ctx, "dataset", keep_node=True)
+
+    def exitSource(self, ctx:deepDSLParser.Input_shapeContext):
+        make_ast_subtree(self.ast, ctx, "source", keep_node=True)
+
+    def exitPreprocessing_func(self, ctx:deepDSLParser.Input_shapeContext):
+        make_ast_subtree(self.ast, ctx, "preprocessing_func", keep_node=True)
 
     def exitEpochs(self,ctx):
         make_ast_subtree(self.ast, ctx, ctx.getChild(2).getText())
