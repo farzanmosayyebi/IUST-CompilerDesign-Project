@@ -26,6 +26,7 @@ def main(args):
 	post_order_ast_traverser = PostOrderASTTraverser()
 	post_order_ast_traverser.node_attributes = ['label', 'text', 'number']
 	traversal = post_order_ast_traverser.traverse_ast(ast.root)
+	print(traversal)
 	# code_generator = DeepDSLCodeGenerator()
 	# generated_code = code_generator.generate_code(traversal)
 	# with open(arguments.output, 'w') as output_file:
