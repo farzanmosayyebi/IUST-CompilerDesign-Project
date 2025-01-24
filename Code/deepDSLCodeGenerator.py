@@ -1,15 +1,28 @@
 class DeepDSLCodeGenerator:
     def __init__(self):
-        self.non_operands = ['network', 'layer', 'training', 'dataset', 'visualize', 'evaluate']
+        self.non_operands = [
+            'network',
+            'layer',
+            'training',
+            'visualize',
+            'input_shape',
+            'evaluate',
+            'dataset',
+        ]
+
         self.operand_stack = []
         self.code_stack = []
 
+    def is_operand(self, item):
+        return item in self.non_operands
+
     def generate_code(self, post_order_array):
         for item in post_order_array:
-            if item in self.non_operands:
-                self.code_stack.append(self.generate_code_based_on_non_operand(item["label"]))
+            label = item["label"]
+            if not self.is_operand(label):
+                self.generate_code_based_on_non_operand(label)
             else:
-                self.operand_stack.append(item["label"])
+                self.operand_stack.append(label)
 
         result = ''
         for code in self.code_stack:
