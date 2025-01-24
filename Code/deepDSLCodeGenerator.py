@@ -16,7 +16,7 @@ class DeepDSLCodeGenerator:
             if code is not None:
                 result += code
 
-        with open("output.il", "w") as generated_output:
+        with open("output.txt", "w") as generated_output:
             generated_output.write(self.generate_code_import())
             generated_output.write(result)
         return result

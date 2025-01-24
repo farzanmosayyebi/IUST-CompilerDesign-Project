@@ -139,5 +139,10 @@ class deepDSLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by deepDSLParser#type.
+    def visitType(self, ctx:deepDSLParser.TypeContext):
+        return self.visitChildren(ctx)
+
+
 
 del deepDSLParser

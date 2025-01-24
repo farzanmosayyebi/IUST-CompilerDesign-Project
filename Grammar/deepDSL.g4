@@ -64,7 +64,7 @@ preprocessing: 'preprocessing' ':' preprocessing_func ';';
 
 preprocessing_func: 'normalize' value;
 
-types: 'type' ':' ('Dense' | 'Flatten') ';';
+types: 'type' ':' type ';';
 
 units: 'units' ':' value ';';
 
@@ -76,6 +76,8 @@ input_shape: 'input_shape' ':' '[' value (',' value)* ']' ';';
 value: (INT | FLOAT);
 
 path : STRING;
+
+type: ('Dense' | 'Flatten');
 
 // Lexer Rules
 ID: [a-zA-Z_][a-zA-Z_0-9]*;

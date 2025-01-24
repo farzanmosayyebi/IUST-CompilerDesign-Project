@@ -242,5 +242,14 @@ class deepDSLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by deepDSLParser#type.
+    def enterType(self, ctx:deepDSLParser.TypeContext):
+        pass
+
+    # Exit a parse tree produced by deepDSLParser#type.
+    def exitType(self, ctx:deepDSLParser.TypeContext):
+        pass
+
+
 
 del deepDSLParser
