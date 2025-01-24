@@ -6,9 +6,13 @@ from gen.deepDSLParser import deepDSLParser
 
 class DeepDSLCustomListener(deepDSLListener):
     def __init__(self, rule_names):
-        self.overridden_rules = ['layer', 'types', 'units','training', 'activation',
-                                 'visualize', 'input_shape', 'evaluate', 'metric_choice' ,'epochs',
-                                 'dataset', 'source', 'preprocessing_func']
+        self.overridden_rules = [
+            'layer',
+            'training',
+            'visualize',
+            'input_shape',
+            'dataset',
+        ]
         self.rule_names = rule_names
         self.ast = AST()
 
@@ -17,17 +21,20 @@ class DeepDSLCustomListener(deepDSLListener):
         if rule_name not in self.overridden_rules:
             make_ast_subtree(self.ast, ctx, rule_name)
 
+    def exitNetwork(self, ctx):
+        make_ast_subtree(self.ast, ctx, ctx.getChild(1).getText())
+
     def exitLayer(self, ctx):
         make_ast_subtree(self.ast, ctx, "layer", keep_node=True)
 
     def exitTypes(self, ctx):
-        make_ast_subtree(self.ast, ctx,"types", keep_node=True)
+        make_ast_subtree(self.ast, ctx, ctx.getChild(1).getText(), keep_node=False)
 
     def exitUnits(self, ctx):
-        make_ast_subtree(self.ast, ctx, "units", keep_node=True)
+        make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
 
     def exitActivation(self, ctx):
-        make_ast_subtree(self.ast, ctx, "activation", keep_node=True)
+        make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
 
     def exitTraining(self, ctx):
         make_ast_subtree(self.ast, ctx, "training", keep_node=True)
@@ -39,20 +46,22 @@ class DeepDSLCustomListener(deepDSLListener):
         make_ast_subtree(self.ast, ctx, "input_shape", keep_node=True)
 
     def exitMetric_choice(self, ctx:deepDSLParser.Input_shapeContext):
-        make_ast_subtree(self.ast, ctx, "metric_choice", keep_node=True)
+        make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
 
     def exitDataset(self, ctx:deepDSLParser.Input_shapeContext):
         make_ast_subtree(self.ast, ctx, "dataset", keep_node=True)
 
     def exitSource(self, ctx:deepDSLParser.Input_shapeContext):
-        make_ast_subtree(self.ast, ctx, "source", keep_node=True)
+        make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
 
     def exitPreprocessing_func(self, ctx:deepDSLParser.Input_shapeContext):
-        make_ast_subtree(self.ast, ctx, "preprocessing_func", keep_node=True)
+        make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
 
     def exitEpochs(self,ctx):
-        make_ast_subtree(self.ast, ctx, "epochs", keep_node=True)
+        make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
 
     def exitEvaluate(self, ctx:deepDSLParser.EvaluateContext):
         make_ast_subtree(self.ast, ctx, "evaluate", keep_node=True)
+
+
 
