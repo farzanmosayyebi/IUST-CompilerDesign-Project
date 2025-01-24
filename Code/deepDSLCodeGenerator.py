@@ -1,6 +1,6 @@
 class DeepDSLCodeGenerator:
     def __init__(self):
-        self.non_operands = []
+        self.non_operands = ['','network','layer']
         self.operand_stack = []
         self.code_stack = []
 

@@ -47,10 +47,10 @@ def show_ast(ast_root_node):
     # plt.savefig('plot.png')
 
     import pydot
-    fig, ax = plt.subplots(1, 1, figsize=(20, 20))
+    fig, ax = plt.subplots(1, 1, figsize=(30, 30))
     pos = graphviz_layout(graph, prog="dot")
     nx.draw(graph, pos,
-            ax=ax, node_size=500,
+            ax=ax, node_size=700,
             labels=nx.get_node_attributes(graph, "label"), alpha=0.5,
             node_color="cyan", with_labels=True)
     # Set margins for the axes so that nodes aren't clipped# ax = plt.gca()
