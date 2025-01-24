@@ -1,7 +1,6 @@
 class DeepDSLCodeGenerator:
     def __init__(self):
         self.non_operands = [
-            'network',
             'layer',
             'training',
             'visualize',
@@ -12,9 +11,20 @@ class DeepDSLCodeGenerator:
 
         self.operand_stack = []
         self.code_stack = []
+        self.shape_stack = []
 
     def is_operand(self, item):
-        return item in self.non_operands
+        return item not in self.non_operands
+
+    @staticmethod
+    def generate_initial(self):
+        imports = "import tensorflow as tf\n" + \
+                  "import numpy as np\n"
+
+        class_def = f"class NewNetwork:\n" + \
+                    f"\tdef __init__(self):\n" + \
+                    f"\t\tself.model = tf.keras.Sequential()\n"
+        return imports + class_def
 
     def generate_code(self, post_order_array):
         for item in post_order_array:
@@ -29,81 +39,31 @@ class DeepDSLCodeGenerator:
             if code is not None:
                 result += code
 
-        with open("output.txt", "w") as generated_output:
-            generated_output.write(self.generate_code_import())
-            generated_output.write(result)
+        with open("output.txt", "w") as f:
+            f.write(self.generate_initial(self))
+            f.write(result)
         return result
 
     def generate_code_based_on_non_operand(self, item):
-        if item == "network":
-            self.generate_network()
-        elif item == "layer":
+        if item == "layer":
             self.generate_layer()
-        elif item == "training":
-            self.generate_training()
-        elif item == "dataset":
-            self.generate_load_dataset()
-        elif item == "visualize":
-            self.generate_visualize()
-        elif item == "evaluate":
-            self.generate_evaluate()
+        elif item == "input_shape":
+            self.generate_input_shape()
 
-    @staticmethod
-    def generate_code_import():
-        result = ( "import tensorflow as tf\n"
-                   "import numpy as np\n"
-                   "import matplotlib.pyplot as plt\n"
-                   "from tensorflow.keras.models import Sequential\n"
-                   "from tensorflow.keras.layers import Flatten, Dense\n")
-        return result
-
-    def generate_load_dataset(self):
-        result = "(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()"
-        return result
-
-
-    @staticmethod
-    def generate_check_shape(self):
-        result = ("print(\"Feature matrix (x_train):\", x_train.shape)\n"
-                  "print(\"Target matrix (y_train):\", y_train.shape)\n"
-                  "print(\"Feature matrix (x_test):\", x_test.shape)\n"
-                  "print(\"Target matrix (y_test):\", y_test.shape)\n")
-        return result
-
-    def generate_network(self):
-        result = f"model = Sequential({self.generate_layer()})\n"
-        return result
+    def generate_input_shape(self):
+        y = self.operand_stack.pop()
+        x = self.operand_stack.pop()
+        code_string = f"input_shape=({x}, {y})"
+        self.shape_stack.append(code_string)
 
     def generate_layer(self):
+        layer_activation = self.operand_stack.pop()
+        layer_units = self.operand_stack.pop()
         layer_type = self.operand_stack.pop()
-        units = self.operand_stack.pop()
-        activation = self.operand_stack.pop()
-        input_shape = self.operand_stack.pop() if layer_type == "Dense" else None
-        result = ''
 
-        if input_shape:
-            result += f"model.add(Dense({units}, activation='{activation}', input_shape={input_shape}))\n"
-        else:
-            result += f"model.add({layer_type}({units}, activation='{activation}'))\n"
+        layer_input_shape = ''
+        if len(self.shape_stack) > 0:
+            layer_input_shape = f', {self.shape_stack.pop()}'
 
-        return result
-
-    def generate_training(self):
-        optimizer = self.operand_stack.pop()
-        loss = self.operand_stack.pop()
-        metrics = self.operand_stack.pop()
-        epochs = self.operand_stack.pop()
-        batch_size = self.operand_stack.pop()
-
-        result = ''
-        result += f"model.compile(optimizer='{optimizer}', loss='{loss}', metrics={metrics})\n"
-        result += f"model.fit(x_train, y_train, epochs={epochs}, batch_size={batch_size})\n"
-
-        return result
-
-    def generate_visualize(self):
-        return ''
-
-    def generate_evaluate(self):
-        result = "model.evaluate(x_test, y_test)\n"
-        return result
+        layer_def = f"\t\tself.model.add(tf.keras.layers.{layer_type}(units={layer_units}, activation=\'{layer_activation}\'{layer_input_shape}))\n"
+        self.code_stack.append(layer_def)
