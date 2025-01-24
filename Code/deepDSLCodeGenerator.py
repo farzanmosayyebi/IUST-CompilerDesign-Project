@@ -32,3 +32,13 @@ class DeepDSLCodeGenerator:
                    "from tensorflow.keras.models import Sequential\n"
                    "from tensorflow.keras.layers import Flatten, Dense\n")
         return result
+
+    def load_dataset(self):
+        result = "(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()"
+
+
+    def check_shape(self):
+        result = ("print(\"Feature matrix (x_train):\", x_train.shape)\n"
+                  "print(\"Target matrix (y_train):\", y_train.shape)\n"
+                  "print(\"Feature matrix (x_test):\", x_test.shape)\n"
+                  "print(\"Target matrix (y_test):\", y_test.shape)\n")
