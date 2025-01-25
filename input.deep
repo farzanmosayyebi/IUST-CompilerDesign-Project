@@ -8,7 +8,8 @@ network MyNeuralNetwork {
     layer hidden {
         type: Dense;
         units: 128;
-        activation: Sigmoid;
+        input_shape: [28, 28];
+
     }
     layer output {
         type: Dense;
