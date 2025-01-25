@@ -1,4 +1,5 @@
 import networkx as nx
+import os
 
 
 # Function to add nodes and edges to the NetworkX graph
@@ -56,5 +57,5 @@ def show_ast(ast_root_node):
     # Set margins for the axes so that nodes aren't clipped# ax = plt.gca()
     # ax.margins(0.20)plt.axis("off")
     # plt.show()
-    plt.savefig('plot.png')
+    plt.savefig(os.path.join('output', 'AST.png'))
 

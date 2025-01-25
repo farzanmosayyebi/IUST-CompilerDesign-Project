@@ -1,3 +1,6 @@
+import os
+
+
 class DeepDSLCodeGenerator:
     def __init__(self):
         self.non_operands = [
@@ -41,7 +44,8 @@ class DeepDSLCodeGenerator:
             if code is not None:
                 result += code
 
-        with open("generated_output.py", "w") as f:
+        output_file = os.path.join('output', 'generated_output.py')
+        with open(output_file, "w") as f:
             f.write(self.generate_initial(self))
             f.write(result)
         return result
