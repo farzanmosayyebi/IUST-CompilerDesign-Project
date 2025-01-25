@@ -1,8 +1,10 @@
 import tensorflow as tf
 import numpy as np
+
+
 class NewNetwork:
 	def __init__(self):
 		self.model = tf.keras.Sequential()
 		self.model.add(tf.keras.layers.Dense(units=256, activation='Relu', input_shape=(28, 28)))
-		self.model.add(tf.keras.layers.Dense(units=128, activation='Sigmoid'))
+		self.model.add(tf.keras.layers.Dense(units=128, input_shape=(28, 28)))
 		self.model.add(tf.keras.layers.Dense(units=10, activation='Softmax'))
