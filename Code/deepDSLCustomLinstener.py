@@ -8,10 +8,13 @@ class DeepDSLCustomListener(deepDSLListener):
     def __init__(self, rule_names):
         self.overridden_rules = [
             'layer',
-            'training',
-            'visualize',
+            'activation',
             'input_shape',
+            'training',
             'dataset',
+            'visualize',
+            'evaluate',
+
         ]
         self.rule_names = rule_names
         self.ast = AST()
@@ -34,7 +37,7 @@ class DeepDSLCustomListener(deepDSLListener):
         make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
 
     def exitActivation(self, ctx):
-        make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
+        make_ast_subtree(self.ast, ctx, "activation", keep_node=True)
 
     def exitTraining(self, ctx):
         make_ast_subtree(self.ast, ctx, "training", keep_node=True)
