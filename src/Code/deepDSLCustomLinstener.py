@@ -14,7 +14,7 @@ class DeepDSLCustomListener(deepDSLListener):
             'dataset',
             'visualize',
             'evaluate',
-
+            'metric_choice',
         ]
         self.rule_names = rule_names
         self.ast = AST()
@@ -49,7 +49,7 @@ class DeepDSLCustomListener(deepDSLListener):
         make_ast_subtree(self.ast, ctx, "input_shape", keep_node=True)
 
     def exitMetric_choice(self, ctx:deepDSLParser.Input_shapeContext):
-        make_ast_subtree(self.ast, ctx, ctx.getChild(0).getText(), keep_node=False)
+        make_ast_subtree(self.ast, ctx, f"metric_choice", keep_node=True)
 
     def exitDataset(self, ctx:deepDSLParser.Input_shapeContext):
         make_ast_subtree(self.ast, ctx, "dataset", keep_node=True)
