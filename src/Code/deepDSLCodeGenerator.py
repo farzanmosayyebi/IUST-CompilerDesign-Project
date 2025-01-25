@@ -11,6 +11,7 @@ class DeepDSLCodeGenerator:
             'dataset',
             'visualize',
             'evaluate',
+            'metric_choice',
         ]
 
         self.operand_stack = []
@@ -57,6 +58,10 @@ class DeepDSLCodeGenerator:
             self.generate_activation()
         elif item == "input_shape":
             self.generate_input_shape()
+        elif item == "training":
+            self.generate_training()
+        elif item == "metric_choice":
+            self.generate_metric_choice()
 
     def generate_input_shape(self):
         y = self.operand_stack.pop()
@@ -83,3 +88,38 @@ class DeepDSLCodeGenerator:
         activation = self.operand_stack.pop()
         code_string = f"activation=\'{activation}\'"
         self.aux_stack.append(("activation", code_string))
+
+    def generate_training(self):
+        validation_split = self.operand_stack.pop()
+        batch_size = self.operand_stack.pop()
+        epochs = self.operand_stack.pop()
+
+        metrics = ''
+        if len(self.aux_stack) > 0 and self.aux_stack[-1][0] == "metric_choice":
+            metrics = self.aux_stack.pop()[1]
+
+        loss = self.operand_stack.pop()
+        optimizer = self.operand_stack.pop()
+
+        code_string = "\n\tdef compile_model(self):\n" + \
+                      f"\t\tself.model.compile(optimizer=\'{optimizer}\',\n" + \
+                      f"\t\t\tloss=\'{loss}\',\n" + \
+                      f"\t\t\t{metrics})\n"
+
+        code_string += "\n\tdef train_model(self, x_train, y_train, x_val, y_val):\n" + \
+            "\t\tself.model.fit(\n" + \
+            "\t\t\tx_train, y_train,\n" + \
+            "\t\t\tvalidation_data=(x_val, y_val),\n" + \
+            f"\t\t\tepochs={epochs},\n" + \
+            f"\t\t\tbatch_size={batch_size}\n" + \
+            "\t\t)\n"
+
+        self.code_stack.append(code_string)
+
+    def generate_metric_choice(self):
+        metrics = [self.operand_stack.pop() for _ in range(2)]
+        code_string = f"metrics = ["
+        for metric in metrics:
+            code_string += f"\'{metric}\',"
+        code_string = code_string[:-1] + ']'
+        self.aux_stack.append(("metric_choice", code_string))
