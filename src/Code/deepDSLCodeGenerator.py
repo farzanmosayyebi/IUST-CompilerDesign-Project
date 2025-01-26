@@ -33,11 +33,14 @@ class DeepDSLCodeGenerator:
         return imports + class_def
     @staticmethod
     def generate_instance(self):
-        code_string = ("\nnetwork = NewNetwork()\n"
-                       "x_train, x_test, y_train, y_test = network.generate_dataset()\n"
-                       "network.compile_model()\n"
-                       "network.train_model(x_train, y_train, x_test, y_test)\n"
-                       "network.evaluate_model(x_test, y_test)\n")
+        code_string = ("\nif __name__ == \"__main__\":"
+                       "\n\timport tensorflow as tf"
+                       "\n\timport numpy as np"
+                       "\n\tnetwork = NewNetwork()\n"
+                       "\tx_train, x_test, y_train, y_test = network.generate_dataset()\n"
+                       "\tnetwork.compile_model()\n"
+                       "\tnetwork.train_model(x_train, y_train, x_test, y_test)\n"
+                       "\tnetwork.evaluate_model(x_test, y_test)\n")
 
         return code_string
 

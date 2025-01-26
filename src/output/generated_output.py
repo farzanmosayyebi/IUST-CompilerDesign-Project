@@ -33,8 +33,11 @@ class NewNetwork:
 		results = self.model.evaluate(x_test, y_test, verbose=0)
 		print(f"Evaluation results:\n {results}")
 
-network = NewNetwork()
-x_train, x_test, y_train, y_test = network.generate_dataset()
-network.compile_model()
-network.train_model(x_train, y_train, x_test, y_test)
-network.evaluate_model(x_test, y_test)
+if __name__ == "__main__":
+	import tensorflow as tf
+	import numpy as np
+	network = NewNetwork()
+	x_train, x_test, y_train, y_test = network.generate_dataset()
+	network.compile_model()
+	network.train_model(x_train, y_train, x_test, y_test)
+	network.evaluate_model(x_test, y_test)
