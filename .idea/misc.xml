@@ -13,6 +13,16 @@
           <option name="language" value="Python3" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/Grammar/deepDSL.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="D:\Elmos\S4031\CompilerDesign\IUST-CompilerDesign-Project\src\gen" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="Python3" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
       </list>
     </option>
   </component>
