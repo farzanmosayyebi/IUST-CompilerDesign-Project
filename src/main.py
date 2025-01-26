@@ -1,6 +1,6 @@
 from antlr4 import *
 import argparse
-from Code.deepDSLCustomLinstener import DeepDSLCustomListener
+from Code.deepDSLCustomListener import DeepDSLCustomListener
 from Code.deepDSLCodeGenerator import DeepDSLCodeGenerator
 from gen.deepDSLLexer import deepDSLLexer
 from gen.deepDSLParser import deepDSLParser

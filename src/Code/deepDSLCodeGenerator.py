@@ -17,7 +17,6 @@ class DeepDSLCodeGenerator:
 
         self.operand_stack = []
         self.code_stack = []
-        self.shape_stack = []
         self.aux_stack = []
 
     def is_operand(self, item):
