@@ -22,9 +22,19 @@ class NewNetwork:
 			batch_size=32
 		)
 
+	def generate_dataset(self):
+		(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+		return x_train, x_train, y_train, y_test 
+
 	def visualize_model(self, x, y):
 		print(f"visualizing model on a {x} * {y} grid.")
 
 	def evaluate_model(self, x_test, y_test):
 		results = self.model.evaluate(x_test, y_test, verbose=0)
 		print(f"Evaluation results:\n {results}")
+
+network = NewNetwork()
+x_train, x_test, y_train, y_test = network.generate_dataset()
+network.compile_model()
+network.train_model(x_train, y_train, x_test, y_test)
+network.evaluate_model(x_test, y_test)

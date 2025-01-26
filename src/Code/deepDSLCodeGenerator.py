@@ -31,6 +31,15 @@ class DeepDSLCodeGenerator:
                     f"\tdef __init__(self):\n" + \
                     f"\t\tself.model = tf.keras.Sequential()\n"
         return imports + class_def
+    @staticmethod
+    def generate_instance(self):
+        code_string = ("\nnetwork = NewNetwork()\n"
+                       "x_train, x_test, y_train, y_test = network.generate_dataset()\n"
+                       "network.compile_model()\n"
+                       "network.train_model(x_train, y_train, x_test, y_test)\n"
+                       "network.evaluate_model(x_test, y_test)\n")
+
+        return code_string
 
     def generate_code(self, post_order_array):
         for item in post_order_array:
@@ -49,6 +58,7 @@ class DeepDSLCodeGenerator:
         with open(output_file, "w") as f:
             f.write(self.generate_initial(self))
             f.write(result)
+            f.write(self.generate_instance(self))
         return result
 
     def generate_code_based_on_non_operand(self, item):
@@ -70,8 +80,8 @@ class DeepDSLCodeGenerator:
             self.generate_begin_scope_operator()
         elif item == "end_scope_operator":
             self.generate_end_scope_operator()
-        # elif item == "dataset":
-        #     self.generate_dataset()
+        elif item == "dataset":
+            self.generate_dataset()
 
     def generate_input_shape(self):
         y = self.operand_stack.pop()
@@ -160,12 +170,19 @@ class DeepDSLCodeGenerator:
 
         self.code_stack.append(code_string)
 
-    # def generate_dataset(self):
-    #     preprocessing = self.operand_stack.pop()
-    #     source = self.operand_stack.pop()
-    #
-    #     code_string = f"pd.read_csv({source})"
-    #     self.code_stack.append(code_string)
+    def generate_dataset(self):
+        preprocessing = self.operand_stack.pop()
+        source = self.operand_stack.pop()
+        code_string = "\n\tdef generate_dataset(self):\n"
+        if source:
+            code_string += f"\t\t(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()"
+        else:
+            code_string += f"\t\tdata = pd.read_csv({source})" +\
+                            "\n\t\tx_train, x_train, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)"
+        code_string += "\n\t\treturn x_train, x_train, y_train, y_test \n"
+        self.code_stack.append(code_string)
+
+
 
     def generate_begin_scope_operator(self):
         self.code_stack.append("##COMPILER_PARAM:::scope:::begin_scope_operator")
