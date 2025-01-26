@@ -62,6 +62,10 @@ class DeepDSLCodeGenerator:
             self.generate_training()
         elif item == "metric_choice":
             self.generate_metric_choice()
+        elif item == "begin_scope_operator":
+            self.generate_begin_scope_operator()
+        elif item == "end_scope_operator":
+            self.generate_end_scope_operator()
 
     def generate_input_shape(self):
         y = self.operand_stack.pop()
@@ -117,9 +121,24 @@ class DeepDSLCodeGenerator:
         self.code_stack.append(code_string)
 
     def generate_metric_choice(self):
-        metrics = [self.operand_stack.pop() for _ in range(2)]
+        metrics = []
+        current_code = self.code_stack.pop()
+        if current_code != '##COMPILER_PARAM:::scope:::end_scope_operator':
+            self.code_stack.append(current_code)
+            return
+        while current_code != '##COMPILER_PARAM:::scope:::begin_scope_operator':
+            metrics.append(self.aux_stack.pop())
+            current_code = self.code_stack.pop()
         code_string = f"metrics = ["
         for metric in metrics:
             code_string += f"\'{metric}\',"
         code_string = code_string[:-1] + ']'
         self.aux_stack.append(("metric_choice", code_string))
+
+    def generate_begin_scope_operator(self):
+        self.code_stack.append("##COMPILER_PARAM:::scope:::begin_scope_operator")
+
+    def generate_end_scope_operator(self):
+        self.code_stack.append("##COMPILER_PARAM:::scope:::end_scope_operator")
+
+
