@@ -1,7 +1,7 @@
-from src.Repository.ast import AST
-from src.Repository.make_ast_subtree import make_ast_subtree
-from src.gen.deepDSLListener import deepDSLListener
-from src.gen.deepDSLParser import deepDSLParser
+from Repository.ast import AST
+from Repository.make_ast_subtree import make_ast_subtree
+from gen.deepDSLListener import deepDSLListener
+from gen.deepDSLParser import deepDSLParser
 
 
 class DeepDSLCustomListener(deepDSLListener):
@@ -49,6 +49,7 @@ class DeepDSLCustomListener(deepDSLListener):
         make_ast_subtree(self.ast, ctx, "input_shape", keep_node=True)
 
     def exitMetric_choice(self, ctx:deepDSLParser.Input_shapeContext):
+        ctx.compound = True
         make_ast_subtree(self.ast, ctx, f"metric_choice", keep_node=True)
 
     def exitDataset(self, ctx:deepDSLParser.Input_shapeContext):
