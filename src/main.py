@@ -35,7 +35,7 @@ def main(args):
 
 if __name__ == '__main__':
 	argparser = argparse.ArgumentParser()
-	argparser.add_argument('-n', '--file', help='Input source', default=r'input.deep')
+	argparser.add_argument('-n', '--file', help='Input source', default=r'input/input.deep')
 	argparser.add_argument('-o', '--output', help='Output path', default=r'output.py')
 	args = argparser.parse_args()
 	main(args)

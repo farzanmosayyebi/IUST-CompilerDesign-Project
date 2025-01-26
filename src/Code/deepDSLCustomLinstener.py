@@ -1,7 +1,7 @@
-from Repository.ast import AST
-from Repository.make_ast_subtree import make_ast_subtree
-from gen.deepDSLListener import deepDSLListener
-from gen.deepDSLParser import deepDSLParser
+from src.Repository.ast import AST
+from src.Repository.make_ast_subtree import make_ast_subtree
+from src.gen.deepDSLListener import deepDSLListener
+from src.gen.deepDSLParser import deepDSLParser
 
 
 class DeepDSLCustomListener(deepDSLListener):
