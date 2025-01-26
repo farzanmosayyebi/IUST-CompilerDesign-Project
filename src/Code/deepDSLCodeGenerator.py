@@ -62,10 +62,16 @@ class DeepDSLCodeGenerator:
             self.generate_training()
         elif item == "metric_choice":
             self.generate_metric_choice()
+        elif item == "evaluate":
+            self.generate_evaluate()
+        elif item == "visualize":
+            self.generate_visualize()
         elif item == "begin_scope_operator":
             self.generate_begin_scope_operator()
         elif item == "end_scope_operator":
             self.generate_end_scope_operator()
+        # elif item == "dataset":
+        #     self.generate_dataset()
 
     def generate_input_shape(self):
         y = self.operand_stack.pop()
@@ -134,6 +140,32 @@ class DeepDSLCodeGenerator:
             code_string += f"\'{metric}\',"
         code_string = code_string[:-1] + ']'
         self.aux_stack.append(("metric_choice", code_string))
+
+    def generate_evaluate(self):
+        metrics = ''
+        if len(self.aux_stack) > 0 and self.aux_stack[-1][0] == "metric_choice":
+            metrics = self.aux_stack.pop()[1]
+
+        code_string = "\n\tdef evaluate_model(self, x_test, y_test):\n" + \
+                      "\t\tresults = self.model.evaluate(x_test, y_test, verbose=0)\n" + \
+                      "\t\tprint(f\"Evaluation results:\\n {results}\")\n"
+        self.code_stack.append(code_string)
+
+    def generate_visualize(self):
+        y = self.operand_stack.pop()
+        x = self.operand_stack.pop()
+
+        code_string = "\n\tdef visualize_model(self, x, y):\n" + \
+                      "\t\tprint(f\"visualizing model on a {x} * {y} grid.\")\n"
+
+        self.code_stack.append(code_string)
+
+    # def generate_dataset(self):
+    #     preprocessing = self.operand_stack.pop()
+    #     source = self.operand_stack.pop()
+    #
+    #     code_string = f"pd.read_csv({source})"
+    #     self.code_stack.append(code_string)
 
     def generate_begin_scope_operator(self):
         self.code_stack.append("##COMPILER_PARAM:::scope:::begin_scope_operator")
