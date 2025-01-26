@@ -2,6 +2,7 @@ import os
 
 
 class DeepDSLCodeGenerator:
+    generated_rules = []
     def __init__(self):
         self.non_operands = [
             'layer',
@@ -36,11 +37,17 @@ class DeepDSLCodeGenerator:
         code_string = ("\nif __name__ == \"__main__\":"
                        "\n\timport tensorflow as tf"
                        "\n\timport numpy as np"
-                       "\n\tnetwork = NewNetwork()\n"
-                       "\tx_train, x_test, y_train, y_test = network.generate_dataset()\n"
-                       "\tnetwork.compile_model()\n"
-                       "\tnetwork.train_model(x_train, y_train, x_test, y_test)\n"
-                       "\tnetwork.evaluate_model(x_test, y_test)\n")
+                       "\n\tnetwork = NewNetwork()\n")
+        if "generate_dataset" in self.generated_rules:
+            code_string += "\tx_train, x_test, y_train, y_test = network.generate_dataset()\n"
+        else:
+             code_string += "\t(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()\n"
+        if "compile_model" in self.generated_rules:
+            code_string += "\tnetwork.compile_model()\n"
+        if "train_model" in self.generated_rules:
+            code_string += "\tnetwork.train_model(x_train, y_train, x_test, y_test)\n"
+        if "evaluate_model" in self.generated_rules:
+            code_string += "\tnetwork.evaluate_model(x_test, y_test)\n"
 
         return code_string
 
@@ -113,6 +120,9 @@ class DeepDSLCodeGenerator:
         self.aux_stack.append(("activation", code_string))
 
     def generate_training(self):
+        self.generated_rules.append("compile_model")
+        self.generated_rules.append("train_model")
+
         validation_split = self.operand_stack.pop()
         batch_size = self.operand_stack.pop()
         epochs = self.operand_stack.pop()
@@ -156,6 +166,7 @@ class DeepDSLCodeGenerator:
 
     def generate_evaluate(self):
         metrics = ''
+        self.generated_rules.append("evaluate_model")
         if len(self.aux_stack) > 0 and self.aux_stack[-1][0] == "metric_choice":
             metrics = self.aux_stack.pop()[1]
 
@@ -174,6 +185,7 @@ class DeepDSLCodeGenerator:
         self.code_stack.append(code_string)
 
     def generate_dataset(self):
+        self.generated_rules.append("generate_dataset")
         preprocessing = self.operand_stack.pop()
         source = self.operand_stack.pop()
         code_string = "\n\tdef generate_dataset(self):\n"
