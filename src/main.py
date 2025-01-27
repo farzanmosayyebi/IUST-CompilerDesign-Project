@@ -1,6 +1,6 @@
 from antlr4 import *
 import argparse
-from Code.deepDSLCustomLinstener import DeepDSLCustomListener
+from Code.deepDSLCustomListener import DeepDSLCustomListener
 from Code.deepDSLCodeGenerator import DeepDSLCodeGenerator
 from gen.deepDSLLexer import deepDSLLexer
 from gen.deepDSLParser import deepDSLParser
@@ -35,8 +35,8 @@ def main(args):
 
 if __name__ == '__main__':
 	argparser = argparse.ArgumentParser()
-	argparser.add_argument('-n', '--file', help='Input source', default=r'input.txt')
-	argparser.add_argument('-o', '--output', help='Output path', default=r'test_output.txt')
+	argparser.add_argument('-n', '--file', help='Input source', default=r'input/input10.deep')
+	argparser.add_argument('-o', '--output', help='Output path', default=r'output.py')
 	args = argparser.parse_args()
 	main(args)
 
