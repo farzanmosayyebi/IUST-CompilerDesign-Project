@@ -5,11 +5,12 @@ import numpy as np
 class NewNetwork:
 	def __init__(self):
 		self.model = tf.keras.Sequential()
-		self.model.add(tf.keras.layers.Dense(units=128, activation='Relu', input_shape=(32, 32)))
-		self.model.add(tf.keras.layers.Dense(units=2, activation='Sigmoid'))
+end_scope_operator		self.model.add(tf.keras.layers.128(units=128))
+		self.model.add(tf.keras.layers.Dense(units=200, activation='Relu'))
+		self.model.add(tf.keras.layers.Dense(units=3, activation='Softmax'))
 
 	def compile_model(self):
-		self.model.compile(optimizer='accuracy',
+		self.model.compile(optimizer='loss',
 			loss='end_scope_operator',
 			)
 
@@ -17,14 +18,23 @@ class NewNetwork:
 		self.model.fit(
 			x_train, y_train,
 			validation_data=(x_val, y_val),
-			epochs=20,
-			batch_size=64
+			epochs=50,
+			batch_size=32
 		)
+
+	def generate_dataset(self):
+		(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+		return x_train, x_train, y_train, y_test 
+
+	def evaluate_model(self, x_test, y_test):
+		results = self.model.evaluate(x_test, y_test, verbose=0)
+		print(f"Evaluation results:\n {results}")
 
 if __name__ == "__main__":
 	import tensorflow as tf
 	import numpy as np
 	network = NewNetwork()
-	(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+	x_train, x_test, y_train, y_test = network.generate_dataset()
 	network.compile_model()
 	network.train_model(x_train, y_train, x_test, y_test)
+	network.evaluate_model(x_test, y_test)
