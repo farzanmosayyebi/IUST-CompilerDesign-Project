@@ -63,7 +63,7 @@ class DeepDSLCodeGenerator:
             if code is not None:
                 result += code
 
-        output_file = os.path.join('output', 'generated_output3.py')
+        output_file = os.path.join('output', 'generated_output10.py')
         with open(output_file, "w") as f:
             f.write(self.generate_initial(self))
             f.write(result)
