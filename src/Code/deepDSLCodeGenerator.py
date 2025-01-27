@@ -93,9 +93,18 @@ class DeepDSLCodeGenerator:
             self.generate_dataset()
 
     def generate_input_shape(self):
-        y = self.operand_stack.pop()
-        x = self.operand_stack.pop()
-        code_string = f"input_shape=({x}, {y})"
+        shapes = []
+        current_code = self.operand_stack.pop()
+        if current_code != '##COMPILER_PARAM:::scope:::end_scope_operator':
+            self.code_stack.append(current_code)
+            return
+        while current_code != '##COMPILER_PARAM:::scope:::begin_scope_operator':
+            shapes.append(self.aux_stack.pop())
+            current_code = self.code_stack.pop()
+        code_string = f"input_shape=("
+        for shape in shapes.reverse():
+            code_string += f"{shape},"
+        code_string += ")"
         self.aux_stack.append(("input_shape", code_string))
 
     def generate_layer(self):

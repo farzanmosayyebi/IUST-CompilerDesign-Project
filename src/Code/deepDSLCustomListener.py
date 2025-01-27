@@ -46,6 +46,7 @@ class DeepDSLCustomListener(deepDSLListener):
         make_ast_subtree(self.ast, ctx, "visualize", keep_node=True)
 
     def exitInput_shape(self, ctx:deepDSLParser.Input_shapeContext):
+        ctx.compound = True
         make_ast_subtree(self.ast, ctx, "input_shape", keep_node=True)
 
     def exitMetric_choice(self, ctx:deepDSLParser.Input_shapeContext):
