@@ -46,7 +46,7 @@ optimizer: 'optimizer' ':' optimizer_func ';';
 optimizer_func: ('adam' | 'sgd' | 'rmsprop');
 
 loss: 'loss' ':' loss_func ';';
-loss_func: ('SparseCategoricalCrossentropy' | 'MeanSquearedError');
+loss_func: ('SparseCategoricalCrossentropy' | 'MeanSquaredError');
 
 metric_choice: 'metric' ':' '[' metrics (',' metrics)* ']' ';';
 
