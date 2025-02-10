@@ -5,13 +5,12 @@ import numpy as np
 class NewNetwork:
 	def __init__(self):
 		self.model = tf.keras.Sequential()
-		self.model.add(tf.keras.layers.Dense(units=512, activation='Relu', input_shape=(64,64,)))
-		self.model.add(tf.keras.layers.Dense(units=256, activation='Tanh'))
-		self.model.add(tf.keras.layers.Dense(units=128, activation='Sigmoid'))
-		self.model.add(tf.keras.layers.Dense(units=5, activation='Softmax'))
+		self.model.add(tf.keras.layers.Dense(units=128, activation='Relu', input_shape=(50,)))
+		self.model.add(tf.keras.layers.Dense(units=64, activation='Tanh'))
+		self.model.add(tf.keras.layers.Dense(units=1, activation='Linear'))
 
 	def compile_model(self):
-		self.model.compile(optimizer='sgd',
+		self.model.compile(optimizer='adam',
 			loss='MeanSquaredError',
 			metrics = ['loss'])
 
@@ -19,16 +18,13 @@ class NewNetwork:
 		self.model.fit(
 			x_train, y_train,
 			validation_data=(x_val, y_val),
-			epochs=50,
-			batch_size=16
+			epochs=40,
+			batch_size=32
 		)
 
 	def generate_dataset(self):
 		(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 		return x_train, x_train, y_train, y_test 
-
-	def visualize_model(self, x, y):
-		print(f"visualizing model on a {x} * {y} grid.")
 
 	def evaluate_model(self, x_test, y_test):
 		results = self.model.evaluate(x_test, y_test, verbose=0)
