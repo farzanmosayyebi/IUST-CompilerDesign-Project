@@ -13,6 +13,8 @@ class DeepDSLCodeGenerator:
             'visualize',
             'evaluate',
             'metric_choice',
+            'begin_scope_operator',
+            'end_scope_operator',
         ]
 
         self.operand_stack = []
@@ -34,8 +36,6 @@ class DeepDSLCodeGenerator:
     @staticmethod
     def generate_instance(self):
         code_string = ("\nif __name__ == \"__main__\":"
-                       "\n\timport tensorflow as tf"
-                       "\n\timport numpy as np"
                        "\n\tnetwork = NewNetwork()\n")
         if "generate_dataset" in self.generated_rules:
             code_string += "\tx_train, x_test, y_train, y_test = network.generate_dataset()\n"
@@ -63,12 +63,8 @@ class DeepDSLCodeGenerator:
             if code is not None:
                 result += code
 
-        output_file = os.path.join('output', 'generated_output3.py')
-        with open(output_file, "w") as f:
-            f.write(self.generate_initial(self))
-            f.write(result)
-            f.write(self.generate_instance(self))
-        return result
+        code_string = self.generate_initial(self) + result + self.generate_instance(self)
+        return code_string
 
     def generate_code_based_on_non_operand(self, item):
         if item == "layer":
@@ -94,15 +90,17 @@ class DeepDSLCodeGenerator:
 
     def generate_input_shape(self):
         shapes = []
-        current_code = self.operand_stack.pop()
-        if current_code != '##COMPILER_PARAM:::scope:::end_scope_operator':
-            self.code_stack.append(current_code)
+        current_operand = self.operand_stack.pop()
+        if current_operand != '##COMPILER_PARAM:::scope:::end_scope_operator':
+            self.operand_stack.append(current_operand)
             return
-        while current_code != '##COMPILER_PARAM:::scope:::begin_scope_operator':
-            shapes.append(self.aux_stack.pop())
-            current_code = self.code_stack.pop()
+        current_operand = self.operand_stack.pop()
+        while current_operand != '##COMPILER_PARAM:::scope:::begin_scope_operator':
+            shapes.append(current_operand)
+            current_operand = self.operand_stack.pop()
+
         code_string = f"input_shape=("
-        for shape in shapes.reverse():
+        for shape in shapes:
             code_string += f"{shape},"
         code_string += ")"
         self.aux_stack.append(("input_shape", code_string))
@@ -159,13 +157,14 @@ class DeepDSLCodeGenerator:
 
     def generate_metric_choice(self):
         metrics = []
-        current_code = self.code_stack.pop()
-        if current_code != '##COMPILER_PARAM:::scope:::end_scope_operator':
-            self.code_stack.append(current_code)
+        current_operand = self.operand_stack.pop()
+        if current_operand != '##COMPILER_PARAM:::scope:::end_scope_operator':
+            self.operand_stack.append(current_operand)
             return
-        while current_code != '##COMPILER_PARAM:::scope:::begin_scope_operator':
-            metrics.append(self.aux_stack.pop())
-            current_code = self.code_stack.pop()
+        current_operand = self.operand_stack.pop()
+        while current_operand != '##COMPILER_PARAM:::scope:::begin_scope_operator':
+            metrics.append(current_operand)
+            current_operand = self.operand_stack.pop()
         code_string = f"metrics = ["
         for metric in metrics:
             code_string += f"\'{metric}\',"
@@ -208,9 +207,8 @@ class DeepDSLCodeGenerator:
 
 
     def generate_begin_scope_operator(self):
-        self.code_stack.append("##COMPILER_PARAM:::scope:::begin_scope_operator")
+        self.operand_stack.append("##COMPILER_PARAM:::scope:::begin_scope_operator")
 
     def generate_end_scope_operator(self):
-        self.code_stack.append("##COMPILER_PARAM:::scope:::end_scope_operator")
-
+        self.operand_stack.append("##COMPILER_PARAM:::scope:::end_scope_operator")
 
