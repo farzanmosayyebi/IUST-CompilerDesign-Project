@@ -22,7 +22,7 @@ network CustomNetwork {
     }
     training {
         optimizer: sgd;
-        loss: MeanSquearedError;
+        loss: MeanSquaredError;
         metric: [loss];
         epochs: 50;
         batch_size: 16;

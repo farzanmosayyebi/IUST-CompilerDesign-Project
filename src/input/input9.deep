@@ -17,7 +17,7 @@ network TimeSeriesModel {
     }
     training {
         optimizer: adam;
-        loss: MeanSquearedError;
+        loss: MeanSquaredError;
         metric: [loss];
         epochs: 40;
         batch_size: 32;

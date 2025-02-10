@@ -12,7 +12,7 @@ network RegressionModel {
     }
     training {
         optimizer: sgd;
-        loss: MeanSquearedError;
+        loss: MeanSquaredError;
         metric: [loss];
         epochs: 100;
         batch_size: 32;
