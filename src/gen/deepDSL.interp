@@ -20,7 +20,7 @@ null
 'rmsprop'
 'loss'
 'SparseCategoricalCrossentropy'
-'MeanSquearedError'
+'MeanSquaredError'
 'metric'
 'accuracy'
 'epochs'
