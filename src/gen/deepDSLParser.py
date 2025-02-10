@@ -1,4 +1,4 @@
-# Generated from D:/University/Compiler Design/git/IUST-CompilerDesign-Project/Grammar/deepDSL.g4 by ANTLR 4.13.2
+# Generated from D:/Elmos/S4031/CompilerDesign/IUST-CompilerDesign-Project/src/Grammar/deepDSL.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -94,7 +94,7 @@ class deepDSLParser ( Parser ):
                      "'training'", "'dataset'", "'visualize'", "'grid'", 
                      "':'", "'['", "','", "']'", "';'", "'evaluate'", "'optimizer'", 
                      "'adam'", "'sgd'", "'rmsprop'", "'loss'", "'SparseCategoricalCrossentropy'", 
-                     "'MeanSquearedError'", "'metric'", "'accuracy'", "'epochs'", 
+                     "'MeanSquaredError'", "'metric'", "'accuracy'", "'epochs'", 
                      "'batch_size'", "'validation_split'", "'source'", "'preprocessing'", 
                      "'normalize'", "'type'", "'units'", "'activation'", 
                      "'Relu'", "'Sigmoid'", "'Softmax'", "'Tanh'", "'Linear'", 
@@ -198,7 +198,7 @@ class deepDSLParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.13.2")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 

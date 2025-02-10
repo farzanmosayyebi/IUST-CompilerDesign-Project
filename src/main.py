@@ -29,13 +29,13 @@ def main(args):
 	print(traversal)
 	code_generator = DeepDSLCodeGenerator()
 	generated_code = code_generator.generate_code(traversal)
-	# with open(args.output, 'w') as output_file:
-	# 	output_file.write(generated_code)
+	with open(args.output, 'w') as output_file:
+		output_file.write(generated_code)
 
 
 if __name__ == '__main__':
 	argparser = argparse.ArgumentParser()
-	argparser.add_argument('-n', '--file', help='Input source', default=r'input/input10.deep')
+	argparser.add_argument('-n', '--file', help='Input source', default=r'input/input1.deep')
 	argparser.add_argument('-o', '--output', help='Output path', default=r'output.py')
 	args = argparser.parse_args()
 	main(args)

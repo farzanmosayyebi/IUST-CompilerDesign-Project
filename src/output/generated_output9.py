@@ -5,14 +5,14 @@ import numpy as np
 class NewNetwork:
 	def __init__(self):
 		self.model = tf.keras.Sequential()
-end_scope_operator		self.model.add(tf.keras.layers.begin_scope_operator(units=50, activation='Relu'))
+		self.model.add(tf.keras.layers.Dense(units=128, activation='Relu', input_shape=(50,)))
 		self.model.add(tf.keras.layers.Dense(units=64, activation='Tanh'))
 		self.model.add(tf.keras.layers.Dense(units=1, activation='Linear'))
 
 	def compile_model(self):
-		self.model.compile(optimizer='loss',
-			loss='end_scope_operator',
-			)
+		self.model.compile(optimizer='adam',
+			loss='MeanSquaredError',
+			metrics = ['loss'])
 
 	def train_model(self, x_train, y_train, x_val, y_val):
 		self.model.fit(
@@ -31,8 +31,6 @@ end_scope_operator		self.model.add(tf.keras.layers.begin_scope_operator(units=50
 		print(f"Evaluation results:\n {results}")
 
 if __name__ == "__main__":
-	import tensorflow as tf
-	import numpy as np
 	network = NewNetwork()
 	x_train, x_test, y_train, y_test = network.generate_dataset()
 	network.compile_model()
